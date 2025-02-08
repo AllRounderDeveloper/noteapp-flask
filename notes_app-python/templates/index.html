@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Your Notes</h2>
+    <a href="/add"><button class="add-note-btn">+ Add Note</button></a>
+
+    <div class="notes-grid">
+        {% if notes|length == 0 %}
+        <div class="note-red">
+            <h2>No notes yet</h2>
+        </div>
+        {% else %}
+        {% for note in notes %}
+        <div class="note">
+            <div class="notes-headings">
+                <h3 style="color: #4a90e2;">{{loop.index}}.{{note.title}}</h3>
+                <h3>{{note.ftime}}</h3>
+            </div>
+            <p>{{note.desc}}</p>
+            <div class="note-actions">
+                <a href="/edit/{{note.sno}}"><button class="edit-btn">Edit</button></a>
+                <a href="/delete/{{note.sno}}"><button class="delete-btn">Delete</button></a>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

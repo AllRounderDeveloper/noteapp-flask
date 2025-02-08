@@ -1,0 +1,280 @@
+:root {
+    --bg-color: #ECEFF1;
+    /* Soft grayish background */
+    --text-color: #2C3E50;
+    /* Dark slate */
+    --container-bg: #FFFFFF;
+    /* Clean white for content */
+    --primary-color: #4A90E2;
+    /* Muted blue */
+    --primary-hover: #4178C1;
+    /* Darker blue */
+    --note-bg: #FAFAFA;
+    /* Soft note background */
+    --note-shadow: rgba(0, 0, 0, 0.08);
+    /* Subtle shadow */
+    --edit-btn: #F39C12;
+    /* Warm orange */
+    --edit-btn-hover: #D68910;
+    --delete-btn: #E74C3C;
+    /* Muted red */
+    --delete-btn-hover: #C0392B;
+    --footer-bg: #2C3E50;
+    /* Footer dark theme */
+    --border-radius: 10px;
+    /* Rounded elements */
+}
+
+/* Apply CSS Variables */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Header */
+header {
+    background: var(--text-color);
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container */
+.container {
+    width: 85%;
+    max-width: 850px;
+    margin: 40px auto;
+    background: var(--container-bg);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 5px 20px var(--note-shadow);
+    text-align: center;
+}
+
+/* Add Note Button */
+.add-note-btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+.add-note-btn:hover {
+    background: var(--primary-hover);
+    transform: scale(1.05);
+}
+
+/* Notes Grid */
+
+.notes-headings{
+    display: flex;
+    justify-content: space-between;
+}
+.notes-headings h3{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 50%;
+}
+
+/* Individual Note Card */
+.note {
+    background: var(--note-bg);
+    padding: 18px;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 4px 12px var(--note-shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 50px;
+}
+
+.note-red{
+    background-color: #C0392B;
+    color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.note:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Note Actions */
+.note-actions {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Buttons */
+.edit-btn,
+.delete-btn {
+    padding: 8px 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.edit-btn {
+    background: var(--edit-btn);
+    color: white;
+}
+
+.edit-btn:hover {
+    background: var(--edit-btn-hover);
+}
+
+.delete-btn {
+    background: var(--delete-btn);
+    color: white;
+}
+
+.delete-btn:hover {
+    background: var(--delete-btn-hover);
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--container-bg);
+    /* White background */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+    border-radius: var(--border-radius);
+    /* Consistent border radius */
+    margin: 40px auto 100px auto;
+    width: 50%;
+    padding: 40px 30px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+form:hover {
+    transform: translateY(-5px);
+    /* Subtle lift on hover */
+}
+
+/* Input and Textarea Styling */
+form input.add-input,
+form textarea.add-input {
+    padding: 12px 15px;
+    border-radius: var(--border-radius);
+    outline: none;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+form input.add-input:focus,
+form textarea.add-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.2);
+    /* Light blue glow */
+}
+
+/* Description Textarea */
+form textarea.desc {
+    height: 120px;
+    resize: vertical;
+    text-align: left;
+    line-height: 1.5;
+    resize: none;
+}
+
+/* Form Heading */
+h2.add-heading {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: var(--text-color);
+    /* Dark slate */
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Label Styling */
+label {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+/* Submit Button */
+button[type='submit'] {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    width: 40%;
+    height: 45px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 30px auto 0;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button[type='submit']:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        width: 80%;
+    }
+
+    button[type='submit'] {
+        width: 60%;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3px;
+    background: var(--footer-bg);
+    color: white;
+    font-size: 14px;
+    margin-top: 30px;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0px;
+    height: 35px;
+    width: 100vw;
+}

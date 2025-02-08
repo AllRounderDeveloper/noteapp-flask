@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <form action="/edit/{{note.sno}}" method="post">
+        <h2 class="add-heading">Edit your Note</h2>
+        <label for="title">
+            <h3>Title*</h3>
+        </label>
+        <input type="text" name="title" class="add-input title" autocomplete="off" required value={{note.title}}>
+    
+        <label for="desc">
+            <h3>Description*</h3>
+        </label>
+        <textarea name="desc" class="add-input desc" cols="30" rows="10" required>{{note.desc}}</textarea>
+    
+        <button type="submit">Update</button>
+    </form>
+
+{% endblock %}

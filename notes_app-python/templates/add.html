@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/add" method="post">
+    <h2 class="add-heading">Add some notes to your journal</h2>
+    <label for="title">
+        <h3>Title*</h3>
+    </label>
+    <input type="text" name="title" class="add-input title" autocomplete="off" required>
+
+    <label for="desc">
+        <h3>Description*</h3>
+    </label>
+    <textarea name="desc" class="add-input desc" cols="30" rows="10" required></textarea>
+
+    <button type="submit">Add new note</button>
+</form>
+{% endblock content %}
